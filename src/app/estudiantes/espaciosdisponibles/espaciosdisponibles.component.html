@@ -1,1 +1,20 @@
-<p>No hay espacios disponibles por el momento</p>
+<div class="container">
+    <div class="head">
+        <h1>Espacios</h1>
+    </div>
+
+    <div class="espacios" *ngFor="let espacio of espacios">
+        <div class="espacios-info">
+            <h2>{{ espacio.nombre_espacio }}</h2>
+            <p><strong>Descripción:</strong>{{ espacio.descripcion }}</p>
+            <p><strong>Ubicación:</strong> {{ espacio.ubicacion }}</p>
+            <button (click)="openReservaDialog(espacio.id_espacio)">Reservar</button>
+            <button (click)="verReservas(espacio.id_espacio)">Ver Reservas</button>
+        </div>
+        <img [src]="espacio.imagen_url" alt="{{ espacio.nombre_espacio }}" class="espacio-imagen">
+        
+    </div>
+</div>
+
+
+  

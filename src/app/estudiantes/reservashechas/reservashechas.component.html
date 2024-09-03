@@ -1,1 +1,20 @@
-<p>No tienes reservas por el momento</p>
+<div class="container">
+    <div class="head">
+        <h1>Mis reservas {{ numeroReservas }}</h1>
+    </div>
+
+    <div class="misReservas" *ngFor="let reserva of reservasConEspacio">
+        <div class="misReservas-info">
+            <h2>{{ reserva.nombre_espacio }}</h2>
+            <p><strong>Descripción:</strong>{{ reserva.descripcion }}</p>
+            <p><strong>Ubicación:</strong> {{ reserva.ubicacion }}</p>
+            <p><strong>Nombre del Equipo:</strong> {{ reserva.nombre_equipo }}</p>
+            <p><strong>Fecha de Reserva:</strong> {{ reserva.fecha_reserva }}</p>
+            <p><strong>Hora de Inicio:</strong> {{ reserva.hora_inicio }}</p>
+            <p><strong>Hora de Fin:</strong> {{ reserva.hora_fin }}</p>
+            <button (click)="deleteReserva(reserva.id_reserva)">Eliminar</button>
+        </div>
+        <img [src]="reserva.imagen_url" alt="{{ reserva.nombre_espacio }}" class="reserva-imagen">
+        
+    </div>
+</div>

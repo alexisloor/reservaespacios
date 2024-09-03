@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Reservar Espacio</h1>
+<div mat-dialog-content>
+  <form [formGroup]="reservaForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre del Equipo</mat-label>
+      <input matInput formControlName="nombreEquipo">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fechaReserva">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Hora de Inicio</mat-label>
+      <input matInput type="time" formControlName="horaInicio">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Hora de Fin</mat-label>
+      <input matInput type="time" formControlName="horaFin">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [disabled]="!reservaForm.valid" (click)="reservar()">Reservar</button>
+</div>

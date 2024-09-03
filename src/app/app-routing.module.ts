@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { EspaciosdisponiblesComponent } from './estudiantes/espaciosdisponibles/espaciosdisponibles.component';
 import { ReservashechasComponent } from './estudiantes/reservashechas/reservashechas.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CrearespacioComponent } from './crearespacio/crearespacio.component';
 
 
 const routes: Routes = [
@@ -14,9 +15,13 @@ const routes: Routes = [
     children: [
       { path: 'reservashechas', component: ReservashechasComponent }, // "Mis Reservas"
       { path: 'espaciosdisponibles', component: EspaciosdisponiblesComponent }, // "Espacios"
+      { path: 'crearespacio', component: CrearespacioComponent }, // "Crear Espacio"
     ]
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  
+  
+  
 ];
 
 @NgModule({
